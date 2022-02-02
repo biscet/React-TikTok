@@ -5,6 +5,10 @@
   "author": "Egor Prokhorov",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npx nodemon server.js"
+  },
   "dependencies": {
     "express": "^4.17.2",
     "mongoose": "^6.1.9",

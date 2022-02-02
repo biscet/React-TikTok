@@ -5,7 +5,7 @@ import Videos from './db-model.js'
 import data from './data.js'
 
 const app = express()
-const port = 9000
+const port = process.env.PORT || 9000
 
 app.use(express.json())
 app.use((req, res, next) => {
