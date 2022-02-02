@@ -1,5 +1,5 @@
-import Main from '@pages/main/main.jsx'
+import Container from '@pages/container/container.jsx'
 import Loading from '@pages/loading/loading.jsx'
 import NotFound from '@pages/not-found/not-found.jsx'
 
-export { Main, Loading, NotFound }
+export { Container, Loading, NotFound }
