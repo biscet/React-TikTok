@@ -17,7 +17,7 @@ export default function VideoSidebar({ likes, shares, messages }) {
         ) : (
           <FavoriteIBorderIcon fontSize='large' onClick={(e) => setLiked(true)} />
         )}
-        <p>{liked ? likes + 1 : likes}</p>
+        <p>{liked ? Number(likes) + 1 : Number(likes)}</p>
       </div>
       <div className='video-sidebar--button'>
         <MessageIcon fontSize='large' />
