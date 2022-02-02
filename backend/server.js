@@ -1,0 +1,36 @@
+import express from 'express'
+import mongoose from 'mongoose'
+
+import Videos from './db-model.js'
+import data from './data.js'
+
+const app = express()
+const port = 9000
+
+app.use(express.json())
+
+const connection_url =
+  'mongodb+srv://admin:B2fVqL5kAdhUJP09@cluster0.dkdlh.mongodb.net/tiktok?retryWrites=true&w=majority'
+
+mongoose.connect(connection_url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+
+app.get('/', (req, res) => res.status(200).send('Hellow World'))
+
+app.get('/v1/posts', (req, res) => res.status(200).send(data))
+
+app.post('/v2/posts', (req, res) => {
+  const dbVideos = req.body
+
+  Videos.create(dbVideos, (err, data) => {
+    if (err) {
+      res.status(500).send(err)
+    } else {
+      res.status(201).send(data)
+    }
+  })
+})
+
+app.listen(port, () => console.log(`listeting on ${port}`))

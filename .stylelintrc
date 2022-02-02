@@ -1,0 +1,17 @@
+{
+  "extends": ["stylelint-config-recommended", "stylelint-config-standard", "stylelint-config-standard-scss"],
+  "rules": {
+    "scss/double-slash-comment-whitespace-inside": "never",
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["layer"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["client/src/app/**/**/*.scss"]
+    }
+  ]
+}

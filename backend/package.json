@@ -1,0 +1,13 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Egor Prokhorov",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.1.9",
+    "nodemon": "^2.0.15"
+  }
+}

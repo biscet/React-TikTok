@@ -1,0 +1,82 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "settings": {
+    "react": {
+      "version": "16.13.1"
+    }
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "standard"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "prettier"],
+  "rules": {
+    "indent": 0,
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "max-len": [0, 120, 1, { "ignoreUrls": true }],
+    "newline-per-chained-call": 0,
+    "no-confusing-arrow": 0,
+    "lodash/import-scope": 0,
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error", "trace"]
+      }
+    ],
+    "no-unused-vars": 2,
+    "no-undef": 0,
+    "comma-dangle": [0],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "block-like", "next": "*" },
+      { "blankLine": "always", "prev": "block", "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": "export" },
+      { "blankLine": "always", "prev": "*", "next": "if" },
+      { "blankLine": "always", "prev": "if", "next": "*" }
+    ],
+    "no-use-before-define": 0,
+    "prefer-template": 2,
+    "react/destructuring-assignment": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-closing-tag-location": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-first-prop-new-line": [2, "multiline"],
+    "react/jsx-filename-extension": 0,
+    "react/jsx-no-target-blank": 0,
+    "react/jsx-uses-vars": 2,
+    "react/require-default-props": 1,
+    "react/require-extension": 0,
+    "react/self-closing-comp": 0,
+    "react/sort-comp": 0,
+    "multiline-ternary": 0,
+    "require-yield": 0,
+    "space-before-function-paren": ["error", "never"],
+    "prefer-arrow-callback": [
+      "error",
+      {
+        "allowNamedFunctions": true
+      }
+    ],
+    "prettier/prettier": "error",
+    "react/prop-types": 0
+  },
+  "ignorePatterns": [
+    "./client/helpers/*.js",
+    "./client/node_modules/*",
+    "./client/node_modules/**",
+    "./internals/**/*/*.hbs",
+    "./internals/**/*.js",
+    "./client/src/stories/**/*.jsx",
+    "./client/src/stories/**/*.stories.jsx",
+    "./client/.storybook/*"
+  ]
+}
