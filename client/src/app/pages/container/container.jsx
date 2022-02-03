@@ -1,18 +1,21 @@
 import React, { useEffect, useState, useRef } from 'react'
-import _ from 'lodash'
 
 import axios from '@utils/requester'
 import { Video } from '@app/components/container'
 import './container.scss'
 
 export default function Container() {
+  //Массив с видео роликами
   const [videos, setVideos] = useState([])
+
+  //Направление и высота скролла, нужна для логики проигрывания видео
   const [scroll, setScroll] = useState(0)
   const [goingUp, setGoingUp] = useState(false)
 
   const prevScrollY = useRef(0)
   const containerRef = useRef(null)
 
+  //Принятие данных с сервера
   useEffect(() => {
     async function fetchPosts() {
       const response = await axios.get('/v2/posts')
@@ -24,6 +27,7 @@ export default function Container() {
     fetchPosts()
   }, [])
 
+  //Отслеживание скролла и направление скролла
   const onScroll = () => {
     const scrollTop = containerRef.current.scrollTop
     setScroll(scrollTop)
@@ -39,7 +43,7 @@ export default function Container() {
   }
 
   return (
-    <div className='app__videos' ref={containerRef} onScroll={onScroll}>
+    <div className='app-videos' ref={containerRef} onScroll={onScroll}>
       {videos.map((video, key) => (
         <Video
           id={key}
@@ -55,6 +59,7 @@ export default function Container() {
           url={video.url}
         />
       ))}
+      <div style={{ height: 75, width: '100%', position: 'fixed', bottom: 0 }}></div>
     </div>
   )
 }

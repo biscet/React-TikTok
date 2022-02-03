@@ -1,6 +1,6 @@
-.app__videos {
+.app-videos {
   position: relative;
-  height: 100%;
+  height: calc(100% - 75px);
   overflow: scroll;
   width: 100%;
   max-width: 500px;
