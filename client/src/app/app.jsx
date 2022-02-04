@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useEffect } from 'react'
+import React, { Suspense, useState, useCallback, useEffect } from 'react'
 import { hot } from 'react-hot-loader'
 import { BrowserRouter as Router, Switch, Route, withRouter } from 'react-router-dom'
 

@@ -1,10 +1,10 @@
 import React, { lazy } from 'react'
 
-import { NotFound } from '@pages'
+import { NotFound, Container } from '@pages'
 
-const Main = lazy(() => import('@pages/main/main.jsx'))
+//const Container = lazy(() => import('@pages/container/container.jsx'))
 
 export const routes = [
-  { path: '/', exact: true, render: () => <Main /> },
+  { path: '/', exact: true, render: () => <Container /> },
   { path: null, exact: false, render: () => <NotFound /> }
 ]

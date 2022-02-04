@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import MusicNoteIcon from '@material-ui/icons/MusicNote'
 import Ticker from 'react-ticker'
+import PropTypes from 'prop-types'
 
 import './video-footer.scss'
 
@@ -24,4 +25,10 @@ export default function VideoFooter({ channel, description, song }) {
       <img className='video-footer--record' src='https://static.thenounproject.com/png/934821-200.png' alt='' />
     </div>
   )
+}
+
+VideoFooter.propTypes = {
+  channel: PropTypes.string,
+  description: PropTypes.string,
+  song: PropTypes.string
 }

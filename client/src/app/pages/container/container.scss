@@ -1,9 +1,8 @@
-.app__videos {
+.app-videos {
   position: relative;
-  height: 800px;
-  border-radius: 20px;
+  height: calc(100% - 75px);
   overflow: scroll;
-  width: 80%;
+  width: 100%;
   max-width: 500px;
   scroll-snap-type: y mandatory;
 

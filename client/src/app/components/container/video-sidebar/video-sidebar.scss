@@ -1,0 +1,19 @@
+.video-sidebar {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  color: white;
+
+  &--button {
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+#share-icon {
+  transform: rotateY(180deg);
+}
+
+#message-icon {
+  transform: rotateY(180deg);
+}

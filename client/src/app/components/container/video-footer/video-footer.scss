@@ -1,8 +1,9 @@
 .video-footer {
-  position: relative;
+  position: absolute;
   color: white;
-  bottom: 150px;
-  margin-left: 40px;
+  bottom: 10px;
+  margin-left: 5%;
+  width: 97%;
   display: flex;
 
   &--text {
