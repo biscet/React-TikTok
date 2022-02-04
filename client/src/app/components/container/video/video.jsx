@@ -51,7 +51,7 @@ export default function Video({ url, channel, description, song, likes, messages
 
   //Логика автоматического проигрывания видео
   useEffect(() => {
-    const windowHeight = window.innerHeight - 75
+    const windowHeight = window.innerHeight - 60
 
     const videoLaunchConditionUp = goingUp
       ? scroll + windowHeight > windowHeight * id && scroll < windowHeight * id + 10

@@ -5,7 +5,7 @@
 
 .video-sidebar{position:absolute;top:50%;right:3%;color:white}.video-sidebar--button{padding:10px;text-align:center}#share-icon{transform:rotateY(180deg)}#message-icon{transform:rotateY(180deg)}
 
-.app-videos{position:relative;height:calc(100% - 75px);overflow:scroll;width:100%;max-width:500px;scroll-snap-type:y mandatory;-ms-overflow-style:none;scrollbar-width:none}.app-videos::-webkit-scrollbar{display:none}
+.app-videos{position:relative;height:calc(100% - 60px);overflow:scroll;width:100%;max-width:500px;scroll-snap-type:y mandatory;-ms-overflow-style:none;scrollbar-width:none}.app-videos::-webkit-scrollbar{display:none}
 
 .ellipsis-spinner{display:flex;position:relative;justify-content:center;align-items:center}.ellipsis-spinner div{width:0.75rem;margin-left:0.25rem;margin-right:0.25rem;height:0.75em;border-radius:50%}.ellipsis-spinner div:nth-child(1){animation:motion 1s infinite}.ellipsis-spinner div:nth-child(2){animation:motion 1s infinite;animation-delay:150ms}.ellipsis-spinner div:nth-child(3){animation:motion 1s infinite;animation-delay:250ms}.full{width:100vw;height:100vh;position:relative}@keyframes motion{0%{transform:scale(1)}50%{transform:scale(0.2)}100%{transform:scale(1)}}
 
