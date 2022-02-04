@@ -24,6 +24,9 @@ export default function Container() {
     //   return response
     // }
     // fetchPosts()
+
+    //Перематывание страницы на 1 видео после перезагрузки
+    containerRef.current.scrollTop = 0
   }, [])
 
   //Отслеживание скролла и направление скролла
