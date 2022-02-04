@@ -61,7 +61,7 @@ export default function Container() {
           url={video.url}
         />
       ))}
-      <div style={{ height: 60, width: '100%', position: 'fixed', bottom: 0 }}></div>
+      <div style={{ height: 60, width: '100%', background: 'red', position: 'fixed', bottom: 0 }}></div>
     </div>
   )
 }
