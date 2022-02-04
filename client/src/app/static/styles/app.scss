@@ -10,7 +10,7 @@
 body {
   overflow-x: hidden;
   width: 100%;
-  height: calc(100% - 75px);
+  height: 100%;
 }
 
 html,
@@ -19,7 +19,7 @@ html,
 }
 
 .app {
-  height: 100vh;
+  height: calc(100vh - 75px);
   background-color: black;
   display: grid;
   place-items: start;
