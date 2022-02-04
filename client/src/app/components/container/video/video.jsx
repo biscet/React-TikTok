@@ -18,11 +18,21 @@ export default function Video({ url, channel, description, song, likes, messages
 
   //Включить проигрывание видео
   const onChangePlay = () => {
-    videoRef.current.play()
-    setPlaying(true)
+    let autoPlayAllowedCheck = audioRef.current.play()
 
-    audioRef.current.play()
-    setMuted(true)
+    //Проверка политики браузера на наличие AutoplayAllowed правила
+    autoPlayAllowedCheck &&
+      autoPlayAllowedCheck
+        .then(() => {
+          videoRef.current.play()
+          setPlaying(true)
+
+          audioRef.current.play()
+          setMuted(true)
+        })
+        .catch(() => {
+          onChangePause(true)
+        })
   }
 
   //Выключить проигрывание видео
@@ -73,7 +83,7 @@ export default function Video({ url, channel, description, song, likes, messages
   const handleProgress = (event) => {
     const manualChange = Number(event.target.value)
 
-    videoRef.current.currentTimeб = (videoRef.current.duration / 100) * manualChange
+    videoRef.current.currentTime = (videoRef.current.duration / 100) * manualChange
     audioRef.current.currentTime = (videoRef.current.duration / 100) * manualChange
 
     setProgrressBar(manualChange)

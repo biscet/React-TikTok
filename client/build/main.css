@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap);
+.video{position:relative;background-color:white;width:100%;height:100%;scroll-snap-align:start;overflow:hidden}.video--player{object-fit:fill;width:100%;height:100%}.video--input-range{position:absolute;bottom:-5px;left:0;z-index:1;transition:all 0.2s linear}.video--input-range:hover{bottom:-3px}
+
+.video-footer{position:absolute;color:white;bottom:10px;margin-left:5%;width:97%;display:flex}.video-footer--text{flex:1}.video-footer--text p{padding-bottom:20px}.video-footer--text h3{padding-bottom:20px}.video-footer--icon{position:absolute}.video-footer--record{animation:spinTheRecord infinite 5s linear;height:50px;filter:invert(1);position:absolute;bottom:0;right:20px}.video-footer--ticker h1{padding-top:7px}.video-footer--ticker .ticker{height:fit-content;position:relative;top:3px;margin-left:30px;width:60%}@keyframes spinTheRecord{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+.video-sidebar{position:absolute;top:50%;right:3%;color:white}.video-sidebar--button{padding:10px;text-align:center}#share-icon{transform:rotateY(180deg)}#message-icon{transform:rotateY(180deg)}
+
+.app-videos{position:relative;height:calc(100% - 75px);overflow:scroll;width:100%;max-width:500px;scroll-snap-type:y mandatory;-ms-overflow-style:none;scrollbar-width:none}.app-videos::-webkit-scrollbar{display:none}
+
+.ellipsis-spinner{display:flex;position:relative;justify-content:center;align-items:center}.ellipsis-spinner div{width:0.75rem;margin-left:0.25rem;margin-right:0.25rem;height:0.75em;border-radius:50%}.ellipsis-spinner div:nth-child(1){animation:motion 1s infinite}.ellipsis-spinner div:nth-child(2){animation:motion 1s infinite;animation-delay:150ms}.ellipsis-spinner div:nth-child(3){animation:motion 1s infinite;animation-delay:250ms}.full{width:100vw;height:100vh;position:relative}@keyframes motion{0%{transform:scale(1)}50%{transform:scale(0.2)}100%{transform:scale(1)}}
+
+.not-found{display:flex;width:100vw;height:100vh;align-items:center;justify-content:center}
+
+*{margin:0;padding:0;font-family:'Oswald', sans-serif;font-family:'Ubuntu', sans-serif}body{overflow-x:hidden;width:100%;height:100%}html,#root{scroll-snap-type:y mandatory}.app{height:100vh;background-color:black;display:grid;place-items:start}
+
