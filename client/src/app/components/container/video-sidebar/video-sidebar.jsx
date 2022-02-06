@@ -17,6 +17,10 @@ export default function VideoSidebar({ likes, shares, messages }) {
 
   return (
     <div className='video-sidebar'>
+      <div className='video-sidebar--button--profile'>
+        <img src='https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png' />
+        <div className='video-sidebar--button--profile--add'>+</div>
+      </div>
       <div className='video-sidebar--button'>
         <FavoriteIcon fill={liked ? '#ee3054' : 'white'} onClick={() => setLiked(!liked)} />
         <p>{formatNumber(likes)}</p>
