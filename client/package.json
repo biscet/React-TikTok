@@ -8,7 +8,8 @@
     "start": "webpack-dev-server --mode development --open --hot --stats-colors",
     "build": "webpack --mode production --stats-colors",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "android": "ionic capacitor add android"
   },
   "dependencies": {
     "@babel/plugin-proposal-private-methods": "^7.16.11",
