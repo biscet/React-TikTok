@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
+import PropTypes from 'prop-types'
 
 import './footer.scss'
 
@@ -11,7 +12,7 @@ const types = [
   { icon: () => <Profile />, title: 'Я' }
 ]
 
-export default function Footer() {
+export default function Footer({ setTabType }) {
   const [type, setType] = useState(types && types[0].title)
 
   return (
@@ -19,7 +20,10 @@ export default function Footer() {
       {types.map((item, key) => (
         <div
           key={key}
-          onClick={() => setType(item.title)}
+          onClick={() => {
+            setType(item.title)
+            setTabType(item.title)
+          }}
           className={clsx('app-footer--link', type === item.title && 'app-footer--link_active')}
         >
           {item.icon()}
@@ -28,6 +32,10 @@ export default function Footer() {
       ))}
     </div>
   )
+}
+
+Footer.propTypes = {
+  setTabType: PropTypes.func
 }
 
 const Home = () => {
