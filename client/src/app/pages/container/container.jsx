@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useMemo } from 'react'
 import clsx from 'clsx'
 
 import { subData, recData } from '@entities/data.js'
@@ -46,33 +46,79 @@ export default function Container() {
     prevScrollY.current = scrollTop
   }
 
+  //Логика отображения страничек приложения
+  const [tabType, setTabType] = useState('Главная')
+
+  const appRender = [
+    {
+      type: 'Главная',
+      component: (key) => <LentaRender key={key} videos={videos} scroll={scroll} goingUp={goingUp} />
+    },
+    {
+      type: 'Интересное',
+      component: (key) => <InterestLentaRender key={key} />
+    },
+    {
+      type: '',
+      component: (key) => <AddVideoRender key={key} />
+    },
+    {
+      type: 'Входящие',
+      component: (key) => <MessagesRender key={key} />
+    },
+    {
+      type: 'Я',
+      component: (key) => <PersonalRender key={key} />
+    }
+  ]
+
   return (
     <div className='app-videos' ref={containerRef} onScroll={onScroll}>
       {videos ? (
         <React.Fragment>
-          <Header type={typeVideos} setType={setTypeVideos} setVideos={setVideos} />
-          {videos.map((video, key) => (
-            <Video
-              id={key}
-              scroll={scroll}
-              goingUp={goingUp}
-              key={video._id}
-              shares={video.shares}
-              messages={video.messages}
-              likes={video.likes}
-              description={video.description}
-              channel={video.channel}
-              song={video.song}
-              url={video.url}
-            />
-          ))}
-          <Footer />
+          {tabType === 'Главная' && <Header type={typeVideos} setType={setTypeVideos} setVideos={setVideos} />}
+          {appRender.map((item, key) => item.type === tabType && item.component(key))}
+          <Footer setTabType={setTabType} />
         </React.Fragment>
       ) : (
         <Loading />
       )}
     </div>
   )
+}
+
+const LentaRender = ({ videos, scroll, goingUp }) => {
+  return videos.map((video, key) => (
+    <Video
+      id={key}
+      scroll={scroll}
+      goingUp={goingUp}
+      key={video._id}
+      shares={video.shares}
+      messages={video.messages}
+      likes={video.likes}
+      description={video.description}
+      channel={video.channel}
+      song={video.song}
+      url={video.url}
+    />
+  ))
+}
+
+const InterestLentaRender = () => {
+  return <div style={{ color: 'white' }}>Интересное</div>
+}
+
+const AddVideoRender = () => {
+  return <div style={{ color: 'white' }}>Добавить видео</div>
+}
+
+const MessagesRender = () => {
+  return <div style={{ color: 'white' }}>Входящие</div>
+}
+
+const PersonalRender = () => {
+  return <div style={{ color: 'white' }}>Я</div>
 }
 
 // async function fetchPosts() {

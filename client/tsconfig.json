@@ -11,8 +11,15 @@
       "@entities/*": ["src/app/entities/*"],
       "@utils/*": ["src/utils/*"],
       "@stories/*": ["src/stories/*"]
-    }
+    },
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es6",
+    "esModuleInterop": true,
+    "typeRoots": ["node_modules/@types"]
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "declaration": true,
+  "compileOnSave": true,
+  "exclude": ["node_modules", "*.test.ts"]
 }

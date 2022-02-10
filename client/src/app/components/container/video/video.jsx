@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
+import clsx from 'clsx'
 import PropTypes from 'prop-types'
 
 import Range from './range-style.js'
@@ -116,9 +117,21 @@ export default function Video({ url, channel, description, song, likes, messages
         onTouchEnd={onChangePlay}
         onChange={(e) => handleProgress(e)}
       />
+      <div onClick={handleVideoPress} className={clsx('video--pause-block', !playing && 'video--pause-block_paused')}>
+        <PlayButton />
+      </div>
       <VideoFooter channel={channel} description={description} song={song} />
       <VideoSidebar likes={likes} shares={shares} messages={messages} />
     </div>
+  )
+}
+
+const PlayButton = () => {
+  return (
+    <svg xmlns='http://www.w3.org/2000/svg' height='42px' viewBox='0 0 24 24' width='42px' fill='white'>
+      <path d='M0 0h24v24H0V0z' fill='none' />
+      <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z' />
+    </svg>
   )
 }
 
